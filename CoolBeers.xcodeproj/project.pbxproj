@@ -14,6 +14,9 @@
 		BD009F8D1FDB4435004C591E /* BeersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD009F8C1FDB4435004C591E /* BeersRouter.swift */; };
 		BD241D8D1FDBA2AF0024FD4D /* BeerDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD241D8C1FDBA2AF0024FD4D /* BeerDetailsRouter.swift */; };
 		BD2E08ED1FDC0BBB003E5E43 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E08EC1FDC0BBB003E5E43 /* Beer.swift */; };
+		BD56CA491FDC4F0600CC9462 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD56CA481FDC4F0600CC9462 /* RootRouter.swift */; };
+		BD56CA4B1FDC596C00CC9462 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD56CA4A1FDC596C00CC9462 /* BeerTableViewCell.swift */; };
+		BD6B145C1FDC63470044DB88 /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD6B145B1FDC63470044DB88 /* BeerTableViewCell.xib */; };
 		BD98E0A81FDAFD2E006B153A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD98E0A71FDAFD2E006B153A /* AppDelegate.swift */; };
 		BD98E0AA1FDAFD2E006B153A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD98E0A91FDAFD2E006B153A /* ViewController.swift */; };
 		BD98E0AD1FDAFD2E006B153A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD98E0AB1FDAFD2E006B153A /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		BD009F8C1FDB4435004C591E /* BeersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersRouter.swift; sourceTree = "<group>"; };
 		BD241D8C1FDBA2AF0024FD4D /* BeerDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsRouter.swift; sourceTree = "<group>"; };
 		BD2E08EC1FDC0BBB003E5E43 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		BD56CA481FDC4F0600CC9462 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		BD56CA4A1FDC596C00CC9462 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
+		BD6B145B1FDC63470044DB88 /* BeerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
 		BD98E0A41FDAFD2E006B153A /* CoolBeers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolBeers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD98E0A71FDAFD2E006B153A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD98E0A91FDAFD2E006B153A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 		BD009F7C1FDB29E2004C591E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BD56CA471FDC4EE400CC9462 /* Root */,
 				BD009F8F1FDB45D5004C591E /* BeerDetails */,
 				BD009F8E1FDB45B2004C591E /* Beers */,
 			);
@@ -89,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				BD009F801FDB2A40004C591E /* BeersViewController.swift */,
+				BD56CA4A1FDC596C00CC9462 /* BeerTableViewCell.swift */,
+				BD6B145B1FDC63470044DB88 /* BeerTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,11 +129,11 @@
 		BD009F8E1FDB45B2004C591E /* Beers */ = {
 			isa = PBXGroup;
 			children = (
-				BD009F8B1FDB436C004C591E /* Entity */,
-				BD009F881FDB4292004C591E /* Interactor */,
-				BD009F871FDB4281004C591E /* Router */,
 				BD009F7E1FDB29FE004C591E /* View */,
+				BD009F881FDB4292004C591E /* Interactor */,
 				BD009F7D1FDB29F8004C591E /* Presenter */,
+				BD009F8B1FDB436C004C591E /* Entity */,
+				BD009F871FDB4281004C591E /* Router */,
 			);
 			path = Beers;
 			sourceTree = "<group>";
@@ -159,6 +168,14 @@
 				BD241D8C1FDBA2AF0024FD4D /* BeerDetailsRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		BD56CA471FDC4EE400CC9462 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				BD56CA481FDC4F0600CC9462 /* RootRouter.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		BD98E09B1FDAFD2E006B153A = {
@@ -267,6 +284,7 @@
 				BD98E0B21FDAFD2E006B153A /* LaunchScreen.storyboard in Resources */,
 				BD98E0AF1FDAFD2E006B153A /* Assets.xcassets in Resources */,
 				BD98E0AD1FDAFD2E006B153A /* Main.storyboard in Resources */,
+				BD6B145C1FDC63470044DB88 /* BeerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +347,12 @@
 				BD98E0AA1FDAFD2E006B153A /* ViewController.swift in Sources */,
 				BD009F861FDB32FC004C591E /* BeersPresenter.swift in Sources */,
 				BD2E08ED1FDC0BBB003E5E43 /* Beer.swift in Sources */,
+				BD56CA491FDC4F0600CC9462 /* RootRouter.swift in Sources */,
 				BD009F8A1FDB42BA004C591E /* BeersInteractor.swift in Sources */,
 				BD98E0A81FDAFD2E006B153A /* AppDelegate.swift in Sources */,
 				BD009F8D1FDB4435004C591E /* BeersRouter.swift in Sources */,
 				BD009F811FDB2A40004C591E /* BeersViewController.swift in Sources */,
+				BD56CA4B1FDC596C00CC9462 /* BeerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -457,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -473,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MFV828C5Z2;
 				INFOPLIST_FILE = CoolBeers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.araujoraphael.CoolBeers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +510,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MFV828C5Z2;
 				INFOPLIST_FILE = CoolBeers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.araujoraphael.CoolBeers;
 				PRODUCT_NAME = "$(TARGET_NAME)";

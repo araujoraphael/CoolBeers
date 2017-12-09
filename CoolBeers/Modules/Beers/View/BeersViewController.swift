@@ -11,15 +11,17 @@ import UIKit
 protocol BeersViewInterface: class {
     func showBeersList(beers: [Beer])
     func showNoBeersScreen()
-    
 }
+
 class BeersViewController: UIViewController, BeersViewInterface {
     @IBOutlet weak var beersTableView: UITableView!
-    
+    var presenter: BeersPresenter!
+    var beers: [Beer] = [Beer]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let nib = UINib(nibName: "BeerTableViewCell", bundle: nil)
+        self.beersTableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
+        presenter.updateView()      
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +30,9 @@ class BeersViewController: UIViewController, BeersViewInterface {
     }
     
     func showBeersList(beers: [Beer]) {
-        
+        self.beers = beers
+        self.beersTableView.reloadData()
+        print(beers)
     }
     
     func showNoBeersScreen() {
@@ -42,9 +46,10 @@ extension BeersViewController: UITableViewDelegate {
 
 extension BeersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BeerTableViewCell", for: indexPath) as! BeerTableViewCell
         
-        // Configure the cell...
+        let beer = beers[indexPath.row]
+        cell.beer = beer
         
         return cell
     }
@@ -53,7 +58,10 @@ extension BeersViewController: UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return beers.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 106.0
+    }
 }

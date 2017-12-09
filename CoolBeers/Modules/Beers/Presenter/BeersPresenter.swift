@@ -18,11 +18,11 @@ protocol BeersInteractorOutput: class {
 
 class BeersPresenter: BeersModuleInterface, BeersInteractorOutput {
     weak var view: BeersViewInterface!
-    var interactor: BeersInteractorOutput!
+    var interactor: BeersInteractorInput!
     var router: BeersRouter!
-    
+    var beers: [Beer]?
     func updateView() {
-        
+        interactor.fetchBeersList()
     }
     
     func showBeersDetails() {
@@ -30,6 +30,11 @@ class BeersPresenter: BeersModuleInterface, BeersInteractorOutput {
     }
     
     func beersListFetched(beers: [Beer]) {
-        
+        if beers.count > 0 {
+            self.beers = beers
+            self.view.showBeersList(beers: beers)
+        } else {
+            self.view.showNoBeersScreen()
+        }
     }
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeerTableViewCell" rowHeight="114" id="XYB-qe-o8P" customClass="BeerTableViewCell" customModule="CoolBeers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XYB-qe-o8P" id="2Ng-de-8Vd">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MbF-ZY-rcw">
+                        <rect key="frame" x="8" y="12" width="80" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="r9c-ts-KVG"/>
+                            <constraint firstAttribute="height" constant="90" id="wvR-WT-eMF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="No9-7n-sB1">
+                        <rect key="frame" x="96" y="12" width="271" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.78255492449999997" green="0.51864510770000005" blue="0.2094172239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rJ-KB-gv0">
+                        <rect key="frame" x="96" y="34" width="271" height="16.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" red="0.1880636215" green="0.1891707778" blue="0.20253586770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="No9-7n-sB1" firstAttribute="top" secondItem="MbF-ZY-rcw" secondAttribute="top" id="5iO-Vm-S9X"/>
+                    <constraint firstItem="MbF-ZY-rcw" firstAttribute="leading" secondItem="2Ng-de-8Vd" secondAttribute="leading" constant="8" id="SHP-zf-0pv"/>
+                    <constraint firstAttribute="trailing" secondItem="No9-7n-sB1" secondAttribute="trailing" constant="8" id="iFe-Bz-g5W"/>
+                    <constraint firstItem="4rJ-KB-gv0" firstAttribute="top" secondItem="No9-7n-sB1" secondAttribute="bottom" constant="2" id="kes-dV-AQv"/>
+                    <constraint firstItem="MbF-ZY-rcw" firstAttribute="centerY" secondItem="2Ng-de-8Vd" secondAttribute="centerY" id="laU-mm-8qQ"/>
+                    <constraint firstItem="4rJ-KB-gv0" firstAttribute="trailing" secondItem="No9-7n-sB1" secondAttribute="trailing" id="tOA-Rj-H57"/>
+                    <constraint firstItem="4rJ-KB-gv0" firstAttribute="leading" secondItem="No9-7n-sB1" secondAttribute="leading" id="zGn-ZX-JeL"/>
+                    <constraint firstItem="No9-7n-sB1" firstAttribute="leading" secondItem="MbF-ZY-rcw" secondAttribute="trailing" constant="8" id="zSN-9S-Bby"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="beerImageView" destination="MbF-ZY-rcw" id="nFO-y9-erp"/>
+                <outlet property="beerNameLabel" destination="No9-7n-sB1" id="tcP-rt-1jD"/>
+                <outlet property="beerTaglineLabel" destination="4rJ-KB-gv0" id="h6c-J1-mF3"/>
+            </connections>
+            <point key="canvasLocation" x="76.5" y="141"/>
+        </tableViewCell>
+    </objects>
+</document>
