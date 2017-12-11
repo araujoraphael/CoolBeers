@@ -9,7 +9,7 @@
 import UIKit
 protocol BeersModuleInterface: class {
     func updateView()
-    func showBeersDetails()
+    func didSelectBeer(beer: Beer)
 }
 
 protocol BeersInteractorOutput: class {
@@ -21,12 +21,9 @@ class BeersPresenter: BeersModuleInterface, BeersInteractorOutput {
     var interactor: BeersInteractorInput!
     var router: BeersRouter!
     var beers: [Beer]?
+    
     func updateView() {
         interactor.fetchBeersList()
-    }
-    
-    func showBeersDetails() {
-        
     }
     
     func beersListFetched(beers: [Beer]) {
@@ -37,4 +34,9 @@ class BeersPresenter: BeersModuleInterface, BeersInteractorOutput {
             self.view.showNoBeersScreen()
         }
     }
+    
+    func didSelectBeer(beer: Beer){
+        router.presentDetails(forBeer: beer)
+    }
+    
 }

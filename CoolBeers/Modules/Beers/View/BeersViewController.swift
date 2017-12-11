@@ -17,16 +17,17 @@ class BeersViewController: UIViewController, BeersViewInterface {
     @IBOutlet weak var beersTableView: UITableView!
     var presenter: BeersPresenter!
     var beers: [Beer] = [Beer]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "BeerTableViewCell", bundle: nil)
         self.beersTableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
-        presenter.updateView()      
+        presenter.updateView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     func showBeersList(beers: [Beer]) {
@@ -41,7 +42,10 @@ class BeersViewController: UIViewController, BeersViewInterface {
 }
 
 extension BeersViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didSelectBeer(beer: beers[indexPath.row])
+    }
 }
 
 extension BeersViewController: UITableViewDataSource {

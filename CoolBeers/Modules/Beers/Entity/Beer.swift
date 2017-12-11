@@ -16,6 +16,7 @@ class Beer: Object, Mappable {
     @objc dynamic var name: String = ""
     @objc dynamic var tagline: String = ""
     @objc dynamic var imageURL: String = ""
+    @objc dynamic var beerDescription: String = ""
     
     override class func primaryKey() -> String {
         return "id"
@@ -30,6 +31,7 @@ class Beer: Object, Mappable {
         name <- map["name"]
         tagline <- map["tagline"]
         imageURL <- map["image_url"]
+        beerDescription <- map["description"]
     }
     
 

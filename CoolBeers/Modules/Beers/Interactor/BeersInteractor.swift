@@ -14,10 +14,13 @@ protocol BeersInteractorInput: class {
 }
 class BeersInteractor: BeersInteractorInput {
     let APIBaseURL = "https://api.punkapi.com/v2/beers"
+    let path = Bundle.main.path(forResource: "beers", ofType: "json")!
     weak var output: BeersInteractorOutput!
     
     func fetchBeersList() {
-        Alamofire.request(APIBaseURL).responseArray() { (response: DataResponse<[Beer]>)  in
+        let url = URL(fileURLWithPath: path)
+
+        Alamofire.request(url).responseArray() { (response: DataResponse<[Beer]>)  in
             if let beers = response.result.value {
                 self.output.beersListFetched(beers: beers)
             } else {
