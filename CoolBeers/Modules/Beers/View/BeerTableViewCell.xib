@@ -31,29 +31,43 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="No9-7n-sB1">
-                        <rect key="frame" x="62" y="12" width="271" height="20"/>
+                        <rect key="frame" x="62" y="12" width="227" height="20"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.40212118625640869" green="0.10354425758123398" blue="0.23739710450172424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rJ-KB-gv0">
-                        <rect key="frame" x="62" y="34" width="271" height="16.5"/>
+                        <rect key="frame" x="62" y="34" width="227" height="16.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.1880636215" green="0.1891707778" blue="0.20253586770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqD-36-uzA">
+                        <rect key="frame" x="289" y="35" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="n6h-B6-0kJ"/>
+                            <constraint firstAttribute="height" constant="44" id="o4U-zE-9MY"/>
+                        </constraints>
+                        <color key="tintColor" red="0.40212118629999999" green="0.10354425759999999" blue="0.23739710450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="heart"/>
+                        <state key="highlighted" image="heart-filled"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="UqD-36-uzA" firstAttribute="leading" secondItem="No9-7n-sB1" secondAttribute="trailing" id="3cP-uU-LTr"/>
                     <constraint firstItem="No9-7n-sB1" firstAttribute="top" secondItem="MbF-ZY-rcw" secondAttribute="top" id="5iO-Vm-S9X"/>
                     <constraint firstItem="MbF-ZY-rcw" firstAttribute="leading" secondItem="2Ng-de-8Vd" secondAttribute="leading" constant="8" id="SHP-zf-0pv"/>
-                    <constraint firstAttribute="trailing" secondItem="No9-7n-sB1" secondAttribute="trailing" constant="8" id="iFe-Bz-g5W"/>
                     <constraint firstItem="4rJ-KB-gv0" firstAttribute="top" secondItem="No9-7n-sB1" secondAttribute="bottom" constant="2" id="kes-dV-AQv"/>
                     <constraint firstItem="MbF-ZY-rcw" firstAttribute="centerY" secondItem="2Ng-de-8Vd" secondAttribute="centerY" id="laU-mm-8qQ"/>
+                    <constraint firstItem="UqD-36-uzA" firstAttribute="centerY" secondItem="2Ng-de-8Vd" secondAttribute="centerY" id="sNK-xD-2Ax"/>
                     <constraint firstItem="4rJ-KB-gv0" firstAttribute="trailing" secondItem="No9-7n-sB1" secondAttribute="trailing" id="tOA-Rj-H57"/>
                     <constraint firstItem="4rJ-KB-gv0" firstAttribute="leading" secondItem="No9-7n-sB1" secondAttribute="leading" id="zGn-ZX-JeL"/>
                     <constraint firstItem="No9-7n-sB1" firstAttribute="leading" secondItem="MbF-ZY-rcw" secondAttribute="trailing" constant="4" id="zSN-9S-Bby"/>
                 </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UqD-36-uzA" secondAttribute="trailing" constant="42" id="Pit-9f-n7Z"/>
+            </constraints>
             <connections>
                 <outlet property="beerImageView" destination="MbF-ZY-rcw" id="nFO-y9-erp"/>
                 <outlet property="beerNameLabel" destination="No9-7n-sB1" id="tcP-rt-1jD"/>
@@ -62,4 +76,8 @@
             <point key="canvasLocation" x="76.5" y="141"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="heart" width="30" height="26"/>
+        <image name="heart-filled" width="30" height="26"/>
+    </resources>
 </document>

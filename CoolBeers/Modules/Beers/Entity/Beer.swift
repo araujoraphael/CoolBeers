@@ -17,6 +17,7 @@ class Beer: Object, Mappable {
     @objc dynamic var tagline: String = ""
     @objc dynamic var imageURL: String = ""
     @objc dynamic var beerDescription: String = ""
+    @objc dynamic var favorite: Bool = false
     
     override class func primaryKey() -> String {
         return "id"

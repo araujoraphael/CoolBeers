@@ -12,10 +12,13 @@ class BeerTableViewCell: UITableViewCell {
     @IBOutlet weak var beerImageView: UIImageView!
     @IBOutlet weak var beerNameLabel: UILabel!
     @IBOutlet weak var beerTaglineLabel: UILabel!
-    
+    @IBOutlet weak var favoriteButton: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.accessoryView?.tintColor = UIColor(red: 103/255, green: 26.0/255, blue: 61.0/255, alpha: 1.0)
+//        myLikesButton.imageEdgeInsets = UIEdgeInsetsMake(0, left, bottom, right);
+
         // Initialization code
     }
     

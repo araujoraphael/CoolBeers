@@ -14,7 +14,6 @@ protocol BeerDetailsInteractorOutput: class {
 
 protocol BeerDetailsModuleInterface: class {
     func updateView()
-    func showBeersDetails()
 }
 
 class BeerDetailsPresenter:  BeerDetailsModuleInterface, BeerDetailsInteractorOutput {
@@ -25,9 +24,6 @@ class BeerDetailsPresenter:  BeerDetailsModuleInterface, BeerDetailsInteractorOu
     
     func updateView() {
         interactor.fetchBeerDetails(beer: beer)
-    }
-    
-    func showBeersDetails() {
     }
     
     func beerDetailsFetched(beer: Beer) {
