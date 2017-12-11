@@ -8,9 +8,7 @@
 
 import UIKit
 
-class RootRouter: NSObject {
-    //BeersRouter().startModule()
-    
+class RootRouter: NSObject {    
     func presentBeersScreen(in window: UIWindow) {
         window.makeKeyAndVisible()
         window.rootViewController = BeersRouter.startModule()

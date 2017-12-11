@@ -8,10 +8,7 @@
 
 import UIKit
 
-protocol BeerDetailsRouterInput: class {
-    
-}
-class BeerDetailsRouter: NSObject, BeerDetailsRouterInput {
+class BeerDetailsRouter: NSObject {
     weak var beerDetailsViewController: BeerDetailsViewController!
 
     static func startModule(beer: Beer) -> UIViewController {
@@ -32,9 +29,6 @@ class BeerDetailsRouter: NSObject, BeerDetailsRouterInput {
         
         router.beerDetailsViewController = view
         
-        
         return view
-        
     }
-
 }
